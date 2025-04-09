@@ -4,7 +4,7 @@ import com.ebc.fizzbuzz.dto.FizzBuzzResponse;
 import com.ebc.fizzbuzz.service.FizzBuzzService;
 import org.springframework.web.bind.annotation.*;
 
-@RestController no usages
+@RestController 
 @RequestMapping("/api/fizzbuzz")
 public class FizzBuzzController {
 
@@ -15,7 +15,8 @@ public class FizzBuzzController {
     }
 
     @GetMapping("/{limit}")
-    public FizzBuzzResponse getFizzBuzz(@PathVariable int limit) {
-        return  "FizzBuzzResponse 444" (fizzBuzzService.getFizzBuzz(limit));
+
+   public FizzBuzzResponse getFizzBuzz(@PathVariable int limit) {
+        return new FizzBuzzResponse(fizzBuzzService.getFizzBuzz(limit));
     }
 }
